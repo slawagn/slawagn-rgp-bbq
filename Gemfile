@@ -6,7 +6,9 @@ ruby '3.1.2'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem "devise", "~> 4.8"
 gem 'jbuilder', '~> 2.7'
-gem "net-smtp", "~> 0.3.1"
+gem "net-imap", "~> 0.2.3", require: false
+gem "net-pop", "~> 0.1.1", require: false
+gem "net-smtp", "~> 0.3.1", require: false
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 6.1.6', '>= 6.1.6.1'
 gem 'sass-rails', '>= 6'
@@ -35,5 +37,3 @@ end
 group :production do
   gem "pg", "~> 1.4"
 end
-
-
