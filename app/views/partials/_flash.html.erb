@@ -1,0 +1,7 @@
+<div class="container">
+  <% flash.each do |type, msg| %>
+    <div class="alert alert-<%= flash_class_name(type) %> mt-4">
+      <%= msg %>
+    </div>
+  <% end %>
+</div>

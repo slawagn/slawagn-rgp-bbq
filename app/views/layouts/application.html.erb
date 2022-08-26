@@ -13,10 +13,8 @@
   <body>
     <%= render 'partials/nav' %>
     
-    <div class="container">
-      <p id="notice"><%= notice %></p>
-    </div>
-
+    <%= render 'partials/flash' %>
+    
     <div class="container">
       <%= yield %>
     </div>

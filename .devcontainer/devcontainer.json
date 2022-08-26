@@ -5,7 +5,7 @@
 	"context":    "..",
 	"dockerFile": "Dockerfile",
   "forwardPorts": [3000],
-  "postAttachCommand": "(bundle init) && (bundle add debug solargraph rubocop)",
+  // "postAttachCommand": "(bundle init) && (bundle add debug solargraph rubocop)",
   "customizations": {
     "vscode": {
       "extensions": [
