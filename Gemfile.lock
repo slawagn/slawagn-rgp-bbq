@@ -244,8 +244,8 @@ DEPENDENCIES
   devise (~> 4.8)
   jbuilder (~> 2.7)
   listen (~> 3.3)
-  net-imap
-  net-pop
+  net-imap (~> 0.2.3)
+  net-pop (~> 0.1.1)
   net-smtp (~> 0.3.1)
   pg (~> 1.4)
   puma (~> 5.0)
