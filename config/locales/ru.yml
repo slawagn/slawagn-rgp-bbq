@@ -1,4 +1,7 @@
 ru:
+  app:
+    name: 'Шашлыки!'
+    company: 'Хороший программист'
   activerecord:
     models:
       user: 'Пользователь'
@@ -21,9 +24,12 @@ ru:
       destroyed: 'Событие успешно удалено' 
     users:
       updated: 'Данные пользователя обновлены'
-  app:
-    name: 'Шашлыки!'
-    company: 'Хороший программист'
+  views:
+    events:
+      show:
+        edit_button:    'Изменить'
+        delete_button:  'Удалить'
+        confirm_delete: 'Вы уверены, что хотите удалить событие?'
   error:
     one:  '%{count} ошибка'
     few:  '%{count} ошибки'
