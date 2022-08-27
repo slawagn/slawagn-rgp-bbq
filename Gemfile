@@ -13,7 +13,7 @@ gem "net-pop", "~> 0.1.1", require: false
 gem "net-smtp", "~> 0.3.1", require: false
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 6.1.6', '>= 6.1.6.1'
-gem "russian", "~> 0.6.0"
+gem "rails-i18n", "~> 7.0"
 gem 'sass-rails', '>= 6'
 gem 'turbolinks', '~> 5'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
@@ -40,3 +40,4 @@ end
 group :production do
   gem "pg", "~> 1.4"
 end
+
