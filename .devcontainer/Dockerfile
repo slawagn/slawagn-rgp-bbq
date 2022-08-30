@@ -20,5 +20,5 @@ RUN sudo apt-get install -y  \
       npm
 RUN sudo npm install --global yarn
 
-# COPY Gemfile Gemfile.lock ./
-# RUN bundle install
+COPY Gemfile Gemfile.lock ./
+RUN bundle install
