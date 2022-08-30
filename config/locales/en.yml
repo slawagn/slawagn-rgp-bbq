@@ -9,6 +9,10 @@ en:
       destroyed: 'Event was successfully destroyed.'
     users:
       updated: 'User was successfully updated.'
+  devise:
+    registrations:
+      edit:
+        signin_data: 'Registration data'
   views:
     events:
       show:

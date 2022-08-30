@@ -24,6 +24,10 @@ ru:
       destroyed: 'Событие успешно удалено' 
     users:
       updated: 'Данные пользователя обновлены'
+  devise:
+    registrations:
+      edit:
+        signin_data: 'Данные регистрации'
   views:
     events:
       show:
