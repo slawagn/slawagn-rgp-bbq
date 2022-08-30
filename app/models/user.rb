@@ -5,12 +5,22 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :validatable
   
   has_many :events
+  has_many :comments
+  has_many :subscriptions
 
   validates :name, presence: true, length: {maximum: 35}
 
   before_validation :set_name, on: :create
 
+  after_commit :link_subscriptions, on: :create
+
   private
+
+  def link_subscriptions
+    Subscription
+      .where(user_id: nil, user_email: self.email)
+      .update_all(user: self)
+  end
 
   def set_name
     self.name = "Господин №#{User.maximum(:id).to_i.next}" if self.name.blank?

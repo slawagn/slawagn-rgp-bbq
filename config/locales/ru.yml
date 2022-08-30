@@ -18,10 +18,18 @@ ru:
         datetime: 'Дата и время'
         description: 'Описание'
   controllers:
+    comments:
+      created:   'Комментарий отправлен'
+      destroyed: 'Комментарий удалён'
+      error:     'Что-то пошло не так'
     events:
       created: 'Событие успешно создано' 
       updated: 'Событие успешно изменено' 
       destroyed: 'Событие успешно удалено' 
+    subscriptions:
+      created:   'Подписка создана'
+      destroyed: 'Подписка отменена'
+      error:     'Что-то пошло не так'
     users:
       updated: 'Данные пользователя обновлены'
   devise:
@@ -34,6 +42,10 @@ ru:
         edit_button:    'Изменить'
         delete_button:  'Удалить'
         confirm_delete: 'Вы уверены, что хотите удалить событие?'
+    subscriptions:
+      subscription:
+        destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
+
   error:
     one:  '%{count} ошибка'
     few:  '%{count} ошибки'

@@ -3,10 +3,18 @@ en:
     name: 'BBQ!'
     company: 'goodprogrammer'
   controllers:
+    comments:
+      created:   'Comment was successfully created'
+      destroyed: 'Comment was successfully deleted'
+      error:     'Something went wrong'
     events: 
       created: 'Event was successfully created.'
       updated: 'Event was successfully updated.'
       destroyed: 'Event was successfully destroyed.'
+    subscriptions:
+      created:   'Subscribed succesfully.'
+      destroyed: 'Subscription cancelled.'
+      error:     'Something went wrong.'
     users:
       updated: 'User was successfully updated.'
   devise:
@@ -19,3 +27,9 @@ en:
         edit_button:    'Edit'
         delete_button:  'Delete'
         confirm_delete: 'Are you sure you want to delete the event?'
+    comments:
+      comment:
+        destroy_confirm: 'Are you sure you want to delete the comment?'
+    subscriptions:
+      subscription:
+        destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
