@@ -40,7 +40,11 @@ class Subscription < ApplicationRecord
 
   def is_not_trying_to_subscribe_to_own_event
     if event.user == user
-      errors.add(:base, I18n.t('models.subscription.errors.subscribing_to_own_event'))
+      errors.add(:base,
+        I18n.t('models.subscription.errors.subscribing_to_own_event')
+      )
+    end
+  end
     end
   end
 end
