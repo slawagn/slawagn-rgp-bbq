@@ -2,20 +2,21 @@ class Subscription < ApplicationRecord
   belongs_to :event
   belongs_to :user, optional: true
 
-  validates :user_email,
-    presence: true,
-    format:   URI::MailTo::EMAIL_REGEXP,
-    unless:   -> { user.present? }
+  with_options unless: -> { user.present? } do
+    validates :user_email,
+      presence: true,
+      format:   URI::MailTo::EMAIL_REGEXP
 
-  validates :user,
-    uniqueness: { scope: :event_id },
-    if:         -> { user.present? }
+    validates :user_email,
+      uniqueness: { scope: :event_id }
+  end
 
-  validates :user_email,
-    uniqueness: { scope: :event_id },
-    unless:     -> { user.present? }
+  with_options if: -> { user.present? } do
+    validates :user,
+      uniqueness: { scope: :event_id }
 
-  validate :subscribing_to_own_event
+    validate :subscribing_to_own_event
+  end
 
   def user_name
     if user.present?
