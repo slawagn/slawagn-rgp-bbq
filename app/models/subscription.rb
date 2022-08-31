@@ -2,9 +2,6 @@ class Subscription < ApplicationRecord
   belongs_to :event
   belongs_to :user, optional: true
 
-  validates :event,
-    presence: true
-
   validates :user_email,
     presence: true,
     format:   URI::MailTo::EMAIL_REGEXP,
