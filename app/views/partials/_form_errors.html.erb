@@ -6,7 +6,8 @@
     </button>
 
     <div class="lead buffer-bottom">
-      В вашей форме <%= t :error, count: errors.count %>
+      <%= t('devise.shared.error_messages.your_form_contains') %>
+      <%= t :error, count: errors.count %>
     </div>
 
     <ul>

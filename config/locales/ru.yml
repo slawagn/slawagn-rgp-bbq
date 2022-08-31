@@ -1,54 +1,108 @@
 ru:
   app:
     name: 'Шашлыки!'
-    company: 'Хороший программист'
+
   activerecord:
+    attributes:
+      comment:
+        body:      'Комментарий'
+        user_name: 'Имя'
+      event:
+        address:     'Место проведения'
+        datetime:    'Дата и время'
+        description: 'Описание'
+        title:       'Название'
+      subscription:
+        user_email: 'Email'
+        user_name:  'Имя'
+      user:
+        email:    'Email'
+        name:     'Имя'
+        password: 'Пароль'
+        password_confirmation: 'Подтверждение пароля'
     errors:
       models:
         subscription:
-          subscribing_to_own_event: "Нельзя подписываться на собственные события"
+          subscribing_to_own_event: 'Нельзя подписываться на собственные события'
     models:
-      user: 'Пользователь'
-      event: 'Событие'
-    attributes:
-      user:
-        email: 'Email'
-        name: 'Имя'
-        password: 'Пароль'
-        password_confirmation: 'Подтверждение пароля'
-      event:
-        title: 'Название'
-        address: 'Место проведения'
-        datetime: 'Дата и время'
-        description: 'Описание'
+      event:        'Событие'
+      subscription: 'Подписка'
+      user:         'Пользователь'
+
   controllers:
     comments:
       created:   'Комментарий отправлен'
       destroyed: 'Комментарий удалён'
       error:     'Что-то пошло не так'
     events:
-      created: 'Событие успешно создано'
-      updated: 'Событие успешно изменено'
+      created:   'Событие успешно создано'
       destroyed: 'Событие успешно удалено'
+      updated:   'Событие успешно изменено'
     subscriptions:
       created:   'Подписка создана'
       destroyed: 'Подписка отменена'
       error:     'Что-то пошло не так'
     users:
       updated: 'Данные пользователя обновлены'
+
   devise:
     registrations:
       edit:
         signin_data: 'Данные регистрации'
-  views:
-    events:
-      show:
-        edit_button:    'Изменить'
-        delete_button:  'Удалить'
-        confirm_delete: 'Вы уверены, что хотите удалить событие?'
-    subscriptions:
-      subscription:
-        destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
+      new:
+        signup: 'Регистрация'
+    sessions:
+      new:
+        remember_me: 'Запомнить меня'
+        sign_in:     'Войти'
+    shared:
+      error_messages:
+        your_form_contains: 'В вашей форме'
+
+  helpers:
+    link:
+      edit: 'Изменить'
+      return_back: 'вернуться'
+    submit:
+      create: 'Отправить'
+      update: 'Сохранить'
+      delete: 'Удалить'
+
+  events:
+    edit:
+      edit_event: 'Редактирование события'
+    index:
+      create_event: 'Создать событие'
+    new:
+      new_event: 'Новое событие'
+    show:
+      confirm_delete: 'Вы уверены, что хотите удалить событие?'
+      edit_button:    'Изменить'
+      event_host:     'Зовёт:'
+      event_guests:   'Пойдут:'
+      im_coming:      'Я пойду:'
+  partials:
+    footer:
+      company: 'Хороший программист'
+      year:    '2022'
+    nav:
+      profile:  'Профиль'
+      sign_in:  'Войти'
+      sign_out: 'Выйти'
+      sign_up:  'Регистрация'
+  subscriptions:
+    form:
+      subscribe: 'Подписаться'
+    subscription:
+      destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
+  users:
+    edit:
+      change_password: 'Сменить пароль'
+      edit_profile:    'Редактирование профиля'
+    show:
+      edit_profile:        'Редактировать профиль'
+      events_organized:    'Организовал:'
+      no_events_organized: 'Пользователь пока не организовал ни одного события'
 
   error:
     one:  '%{count} ошибка'

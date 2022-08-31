@@ -8,7 +8,7 @@
     <%= link_to fa_icon('times'),
       event_subscription_path(subscription.event, subscription),
       method: :delete,
-      data: {confirm: t('views.subscriptions.subscription.destroy_confirm')}
+      data: {confirm: t('.destroy_confirm')}
     %>
   <% end %>
 </span>

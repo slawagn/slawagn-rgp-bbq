@@ -19,16 +19,16 @@
           <% if current_user_can_edit?(@event) %>
             <div class="d-flex my-2">
               <div class="mr-2">
-                <%= link_to t('views.events.show.edit_button'),
+                <%= link_to t('helpers.link.edit'),
                   edit_event_path(@event),
                   class: 'btn btn-primary' %>
               </div>
 
               <div class="mx-2">
-                <%= button_to t('views.events.show.delete_button'),
+                <%= button_to t('helpers.submit.delete'),
                   event_path(@event),
                   method: :delete,
-                  data: { confirm: t('views.events.show.confirm_delete') },
+                  data: { confirm: t('.confirm_delete') },
                   class: 'btn btn-danger' %>
               </div>
             </div>
@@ -55,12 +55,12 @@
 
     <div class="col-md-4">
       <div class="event-owner">
-        <h4>Зовёт:</h4>
+        <h4><%= t('.event_host') %></h4>
           <p><%= render partial: 'users/user', object: @event.user %></p>
       </div>
 
       <div class="event-subscriptions">
-        <h4>Пойдут:</h4>
+        <h4><%= t('.event_guests') %></h4>
         <div class='d-flex flex-column'>
           <%= render partial: 'subscriptions/subscription',
             collection: @event.subscriptions.except(@new_subscription) %>
@@ -69,7 +69,7 @@
 
       <% unless current_user == @event.user  %>
         <div class="event-subscription-form">
-          <h4>Я пойду:</h4>
+          <h4><%= t('.im_coming') %></h4>
           <div>
             <%= render partial: 'subscriptions/form', locals: {
               subscription: @new_subscription || @event.subscriptions.build

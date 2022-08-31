@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= t 'app.name' %></title>
+    <title><%= t('.name') %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    
+
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body class='vh-100 d-flex flex-column'>
     <%= render 'partials/nav' %>
-    
+
     <%= render 'partials/flash' %>
-    
+
     <div class="container">
       <%= yield %>
     </div>

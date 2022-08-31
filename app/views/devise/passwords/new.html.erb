@@ -1,5 +1,5 @@
 <h2>
-  <%= t('devise.passwords.new.forgot_your_password') %>
+  <%= t('.forgot_your_password') %>
 </h2>
 
 <%= form_for(resource,
@@ -11,7 +11,7 @@
 
   <div class='my-2'>
     <%= f.email_field :email,
-      placeholder:  t('activerecord.attributes.user.email'), 
+      placeholder:  t('activerecord.attributes.user.email'),
       autofocus:    true,
       autocomplete: 'email'
     %>
@@ -19,7 +19,7 @@
   </div>
 
   <div class='my-2'>
-    <%= f.submit t('devise.passwords.new.send_me_reset_password_instructions'),
+    <%= f.submit t('.send_me_reset_password_instructions'),
       class: 'btn btn-primary'
     %>
   </div>

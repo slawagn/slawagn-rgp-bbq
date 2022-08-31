@@ -1,32 +1,45 @@
-<h2>Регистрация</h2>
+<h2><%= t('.signup') %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render 'devise/shared/error_messages', resource: resource %>
 
   <div class='my-2'>
-    <%= f.email_field :email, placeholder: 'Email', autofocus: true, autocomplete: 'email' %>
+    <%= f.email_field :email,
+      placeholder:  t('activerecord.attributes.user.email'),
+      autofocus:    true,
+      autocomplete: 'email'
+    %>
     <%= f.label :email, fa_icon('envelope') %>
   </div>
 
   <div class='my-2'>
-    <%= f.text_field :name, placeholder: 'Имя', autocomplete: 'new-password' %>
+    <%= f.text_field :name,
+      placeholder:  t('activerecord.attributes.user.name'),
+      autofocus:    true
+    %>
     <%= f.label :name, fa_icon('user') %>
   </div>
 
   <div class='my-2'>
-    <%= f.password_field :password, placeholder: 'Пароль', autocomplete: 'new-password' %>
+    <%= f.password_field :password,
+      placeholder:  t('activerecord.attributes.user.password'),
+      autocomplete: 'new-password'
+    %>
     <%= f.label :password, fa_icon('key') %>
   </div>
 
   <div class='my-2'>
-    <%= f.password_field :password_confirmation, placeholder: 'Подтверждение пароля', autocomplete: 'new-password' %>
+    <%= f.password_field :password_confirmation,
+      placeholder:  t('activerecord.attributes.user.password_confirmation'),
+      autocomplete: 'new-password'
+    %>
     <%= f.label :password_confirmation, fa_icon('key') %><br />
   </div>
 
   <div class='my-2'>
-    <%= f.submit 'Готово', class: 'btn btn-primary' %>
+    <%= f.submit t('helpers.submit.create'), class: 'btn btn-primary' %>
   </div>
 <% end %>
 
-<%= link_to 'Войти', new_session_path(resource_name) %><br />
-<%= link_to 'Забыли пароль?', new_password_path(resource_name) %><br />
+<%= link_to t('devise.shared.links.sign_in'), new_session_path(resource_name) %><br />
+<%= link_to t('devise.shared.links.forgot_your_password'), new_password_path(resource_name) %><br />
