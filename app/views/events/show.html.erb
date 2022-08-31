@@ -67,7 +67,7 @@
         </div>
       </div>
 
-      <% unless current_user == @event.user  %>
+      <% if current_user_can_subscribe?(@event)  %>
         <div class="event-subscription-form">
           <h4><%= t('.im_coming') %></h4>
           <div>
