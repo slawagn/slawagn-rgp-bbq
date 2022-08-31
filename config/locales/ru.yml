@@ -24,6 +24,7 @@ ru:
       models:
         subscription:
           subscribing_to_own_event: 'Нельзя подписываться на собственные события'
+          using_email_of_existing_user: 'принадлежит зарегистрированному пользователю'
     models:
       event:        'Событие'
       subscription: 'Подписка'
