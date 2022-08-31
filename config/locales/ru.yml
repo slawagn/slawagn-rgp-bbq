@@ -3,6 +3,10 @@ ru:
     name: 'Шашлыки!'
     company: 'Хороший программист'
   activerecord:
+    errors:
+      models:
+        subscription:
+          subscribing_to_own_event: "Нельзя подписываться на собственные события"
     models:
       user: 'Пользователь'
       event: 'Событие'
@@ -23,9 +27,9 @@ ru:
       destroyed: 'Комментарий удалён'
       error:     'Что-то пошло не так'
     events:
-      created: 'Событие успешно создано' 
-      updated: 'Событие успешно изменено' 
-      destroyed: 'Событие успешно удалено' 
+      created: 'Событие успешно создано'
+      updated: 'Событие успешно изменено'
+      destroyed: 'Событие успешно удалено'
     subscriptions:
       created:   'Подписка создана'
       destroyed: 'Подписка отменена'
@@ -36,10 +40,6 @@ ru:
     registrations:
       edit:
         signin_data: 'Данные регистрации'
-  models:
-    subscription:
-      errors:
-        subscribing_to_own_event: "Нельзя подписываться на собственные события"
   views:
     events:
       show:

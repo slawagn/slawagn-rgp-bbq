@@ -1,4 +1,9 @@
 en:
+  activerecord:
+    errors:
+      models:
+        subscription:
+          subscribing_to_own_event: "Can't subscribe to ekvent you own"
   app:
     name: 'BBQ!'
     company: 'goodprogrammer'
@@ -21,10 +26,6 @@ en:
     registrations:
       edit:
         signin_data: 'Registration data'
-  models:
-    subscription:
-      errors:
-        subscribing_to_own_event: "Can't subscribe to event you own"
   views:
     events:
       show:
