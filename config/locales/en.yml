@@ -3,7 +3,7 @@ en:
     errors:
       models:
         subscription:
-          subscribing_to_own_event: "Can't subscribe to ekvent you own"
+          subscribing_to_own_event: "Can't subscribe to event you own"
   app:
     name: 'BBQ!'
     company: 'goodprogrammer'
