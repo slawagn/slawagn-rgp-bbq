@@ -37,7 +37,7 @@
       </div>
     </div>
   </div>
-  
+
   <div class="row">
     <div class="col-md-8">
       <div class="event-comments buffer-top">
@@ -66,15 +66,17 @@
             collection: @event.subscriptions.except(@new_subscription) %>
         </div>
       </div>
-      
-      <div class="event-subscription-form">
-        <h4>Я пойду:</h4>
-        <div>
-          <%= render partial: 'subscriptions/form', locals: {
-            subscription: @new_subscription || @event.subscriptions.build
-          } %>
+
+      <% unless current_user == @event.user  %>
+        <div class="event-subscription-form">
+          <h4>Я пойду:</h4>
+          <div>
+            <%= render partial: 'subscriptions/form', locals: {
+              subscription: @new_subscription || @event.subscriptions.build
+            } %>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
   </div>
 

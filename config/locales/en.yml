@@ -7,7 +7,7 @@ en:
       created:   'Comment was successfully created'
       destroyed: 'Comment was successfully deleted'
       error:     'Something went wrong'
-    events: 
+    events:
       created: 'Event was successfully created.'
       updated: 'Event was successfully updated.'
       destroyed: 'Event was successfully destroyed.'
@@ -21,6 +21,10 @@ en:
     registrations:
       edit:
         signin_data: 'Registration data'
+  models:
+    subscription:
+      errors:
+        subscribing_to_own_event: "Can't subscribe to event you own"
   views:
     events:
       show:

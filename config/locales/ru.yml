@@ -36,6 +36,10 @@ ru:
     registrations:
       edit:
         signin_data: 'Данные регистрации'
+  models:
+    subscription:
+      errors:
+        subscribing_to_own_event: "Нельзя подписываться на собственные события"
   views:
     events:
       show:
