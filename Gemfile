@@ -7,6 +7,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem "carrierwave", "~> 2.2"
 gem "devise", "~> 4.8"
 gem "devise-i18n", "~> 1.10"
+gem "fog-aws", "~> 3.14"
 gem "font-awesome-rails", "~> 4.7"
 gem 'jbuilder', '~> 2.7'
 gem "net-imap", "~> 0.2.3", require: false
