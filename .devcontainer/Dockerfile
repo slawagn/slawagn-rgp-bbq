@@ -20,5 +20,7 @@ RUN sudo apt-get install -y  \
       npm
 RUN sudo npm install --global yarn
 
+RUN sudo apt-get install libmagickwand-dev
+
 COPY Gemfile Gemfile.lock ./
 RUN bundle install

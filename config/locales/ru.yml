@@ -12,10 +12,13 @@ ru:
         datetime:    'Дата и время'
         description: 'Описание'
         title:       'Название'
+      photo:
+        photo: 'Фотография'
       subscription:
         user_email: 'Email'
         user_name:  'Имя'
       user:
+        avatar:   'Аватар'
         email:    'Email'
         name:     'Имя'
         password: 'Пароль'
@@ -27,6 +30,7 @@ ru:
           using_email_of_existing_user: 'принадлежит зарегистрированному пользователю'
     models:
       event:        'Событие'
+      photo:        'Фотография'
       subscription: 'Подписка'
       user:         'Пользователь'
 
@@ -39,6 +43,10 @@ ru:
       created:   'Событие успешно создано'
       destroyed: 'Событие успешно удалено'
       updated:   'Событие успешно изменено'
+    photos:
+      error:     'Что-то не так с фоткой'
+      created:   'Вы добавили фотографию к событию'
+      destroyed: 'Вы удалили фотку'
     subscriptions:
       created:   'Подписка создана'
       destroyed: 'Подписка отменена'

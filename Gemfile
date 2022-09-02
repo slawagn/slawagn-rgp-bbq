@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.1.2'
 
 gem 'bootsnap', '>= 1.4.4', require: false
+gem "carrierwave", "~> 2.2"
 gem "devise", "~> 4.8"
 gem "devise-i18n", "~> 1.10"
 gem "font-awesome-rails", "~> 4.7"
@@ -14,6 +15,7 @@ gem "net-smtp", "~> 0.3.1", require: false
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 6.1.6', '>= 6.1.6.1'
 gem "rails-i18n", "~> 7.0"
+gem "rmagick", "~> 4.2"
 gem 'sass-rails', '>= 6'
 gem 'turbolinks', '~> 5'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
@@ -40,4 +42,3 @@ end
 group :production do
   gem "pg", "~> 1.4"
 end
-
