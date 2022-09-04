@@ -10,6 +10,7 @@ gem "devise-i18n", "~> 1.10"
 gem "fog-aws", "~> 3.14"
 gem "font-awesome-rails", "~> 4.7"
 gem 'jbuilder', '~> 2.7'
+gem "mailjet", "~> 1.7"
 gem "net-imap", "~> 0.2.3", require: false
 gem "net-pop", "~> 0.1.1", require: false
 gem "net-smtp", "~> 0.3.1", require: false
@@ -23,6 +24,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'webpacker', '~> 5.0'
 
 group :development, :test do
+  gem "dotenv-rails", "~> 2.8"
   gem 'sqlite3', '~> 1.4'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end

@@ -113,6 +113,24 @@ ru:
       events_organized:    'Организовал:'
       no_events_organized: 'Пользователь пока не организовал ни одного события'
 
+  event_mailer:
+    subscription:
+      author:   'Автор'
+      datetime: 'Состоится'
+      email:    'Email'
+      event:    'Событие'
+      name:     'Имя'
+      new_subscription: 'Новая подписка на событие '
+      owner:    'Организатор'
+      title:    'Новая подписка'
+    comment:
+      author:      'Автор'
+      datetime:    'Состоится'
+      event:       'Событие'
+      new_comment: 'Новый коментарий под событием '
+      owner:       'Организатор'
+      title:       'Новый комментарий'
+
   error:
     one:  '%{count} ошибка'
     few:  '%{count} ошибки'
