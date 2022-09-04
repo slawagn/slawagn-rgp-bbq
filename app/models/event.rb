@@ -15,4 +15,8 @@ class Event < ActiveRecord::Base
   def visitors
     (subscribers + [user]).uniq
   end
+
+  def pincode_valid?(pin_provided)
+    pincode == pin_provided
+  end
 end

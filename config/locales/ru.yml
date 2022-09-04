@@ -11,6 +11,7 @@ ru:
         address:     'Место проведения'
         datetime:    'Дата и время'
         description: 'Описание'
+        pincode:     'Пин-код'
         title:       'Название'
       photo:
         photo: 'Фотография'
@@ -40,9 +41,10 @@ ru:
       destroyed: 'Комментарий удалён'
       error:     'Что-то пошло не так'
     events:
-      created:   'Событие успешно создано'
-      destroyed: 'Событие успешно удалено'
-      updated:   'Событие успешно изменено'
+      created:       'Событие успешно создано'
+      destroyed:     'Событие успешно удалено'
+      updated:       'Событие успешно изменено'
+      wrong_pincode: 'Неверный пин-код'
     photos:
       error:     'Что-то не так с фоткой'
       created:   'Вы добавили фотографию к событию'
@@ -70,8 +72,9 @@ ru:
 
   helpers:
     link:
-      edit: 'Изменить'
+      edit:        'Изменить'
       return_back: 'вернуться'
+      main:        'На главную'
     submit:
       create: 'Отправить'
       update: 'Сохранить'
@@ -84,6 +87,8 @@ ru:
       create_event: 'Создать событие'
     new:
       new_event: 'Новое событие'
+    password_form:
+      pin_access: 'Доступ только по пин-коду'
     show:
       confirm_delete: 'Вы уверены, что хотите удалить событие?'
       edit_button:    'Изменить'
