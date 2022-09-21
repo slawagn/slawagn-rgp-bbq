@@ -11,6 +11,7 @@ gem "dotenv-rails", "~> 2.8"
 gem "fog-aws", "~> 3.14"
 gem "font-awesome-rails", "~> 4.7"
 gem 'jbuilder', '~> 2.7'
+gem 'listen', '~> 3.3'
 gem "mailjet", "~> 1.7"
 gem "net-imap", "~> 0.2.3", require: false
 gem "net-pop", "~> 0.1.1", require: false
@@ -30,7 +31,6 @@ group :development, :test do
 end
 
 group :development do
-  gem 'listen', '~> 3.3'
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'spring'
   gem 'web-console', '>= 4.1.0'
