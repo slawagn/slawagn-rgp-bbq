@@ -7,6 +7,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem "carrierwave", "~> 2.2"
 gem "devise", "~> 4.8"
 gem "devise-i18n", "~> 1.10"
+gem "dotenv-rails", "~> 2.8"
 gem "fog-aws", "~> 3.14"
 gem "font-awesome-rails", "~> 4.7"
 gem 'jbuilder', '~> 2.7'
@@ -24,7 +25,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'webpacker', '~> 5.0'
 
 group :development, :test do
-  gem "dotenv-rails", "~> 2.8"
   gem 'sqlite3', '~> 1.4'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
