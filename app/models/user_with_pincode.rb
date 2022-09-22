@@ -1,4 +1,4 @@
-class UserContext
+class UserWithPincode
   attr_reader :user, :pincode
 
   def initialize(user, pincode)

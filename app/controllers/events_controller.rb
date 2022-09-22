@@ -60,7 +60,7 @@ class EventsController < ApplicationController
   end
 
   def pundit_user
-    UserContext.new(current_user, cookies.permanent["event_#{@event.id}_pincode"])
+    UserWithPincode.new(current_user, cookies.permanent["event_#{@event.id}_pincode"])
   end
 
   private
