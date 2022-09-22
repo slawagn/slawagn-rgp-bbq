@@ -21,6 +21,7 @@ gem "pundit", "~> 2.2"
 gem 'rails', '~> 6.1.6', '>= 6.1.6.1'
 gem "rails-i18n", "~> 7.0"
 gem "rmagick", "~> 4.2"
+gem "rspec-rails", "~> 5.1"
 gem 'sass-rails', '>= 6'
 gem 'turbolinks', '~> 5'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
@@ -46,3 +47,4 @@ end
 group :production do
   gem "pg", "~> 1.4"
 end
+
