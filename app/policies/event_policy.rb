@@ -1,5 +1,5 @@
 class EventPolicy < ApplicationPolicy
-  attr_reader :context, :user, :cookies, :params
+  attr_reader :context, :user, :pincode
   
   def initialize(context, record)
     @context = context
@@ -7,19 +7,14 @@ class EventPolicy < ApplicationPolicy
   end
 
   delegate :user,    to: :context
-  delegate :cookies, to: :context
-  delegate :params,  to: :context
+  delegate :pincode, to: :context
 
   def show?
-    if params[:pincode].present? && @record.pincode_valid?(params[:pincode])
-      cookies.permanent["event_#{@record.id}_pincode"] = params[:pincode]
-    end
-
     if @record.pincode.blank?
       true
     elsif user == @record.user
       true
-    elsif @record.pincode_valid?(cookies.permanent["event_#{@record.id}_pincode"])
+    elsif @record.pincode_valid?(pincode)
       true
     else
       false

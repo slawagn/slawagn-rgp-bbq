@@ -8,10 +8,15 @@ class EventsController < ApplicationController
   end
 
   def show
+    if params[:pincode].present?
+      cookies.permanent["event_#{@event.id}_pincode"] = params[:pincode]
+    end
+    
     unless policy(@event).show?
+      skip_authorization
       render 'password_form' and return
     end
-
+    
     authorize @event
 
     @new_comment = @event.comments.build(params[:comment])
@@ -55,7 +60,7 @@ class EventsController < ApplicationController
   end
 
   def pundit_user
-    UserContext.new(current_user, cookies, params)
+    UserContext.new(current_user, cookies.permanent["event_#{@event.id}_pincode"])
   end
 
   private
