@@ -16,7 +16,7 @@
             <p><%= @event.description %></p>
           </div>
 
-          <% if current_user_can_edit?(@event) %>
+          <% if policy(@event).update? %>
             <div class="d-flex my-2">
               <div class="mr-2">
                 <%= link_to t('helpers.link.edit'),

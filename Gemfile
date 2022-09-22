@@ -17,6 +17,7 @@ gem "net-imap", "~> 0.2.3", require: false
 gem "net-pop", "~> 0.1.1", require: false
 gem "net-smtp", "~> 0.3.1", require: false
 gem 'puma', '~> 5.0'
+gem "pundit", "~> 2.2"
 gem 'rails', '~> 6.1.6', '>= 6.1.6.1'
 gem "rails-i18n", "~> 7.0"
 gem "rmagick", "~> 4.2"

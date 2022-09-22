@@ -32,6 +32,8 @@ class EventsController < ApplicationController
   end
 
   def update
+    authorize @event
+
     if @event.update(event_params)
       redirect_to @event, notice: I18n.t('controllers.events.updated')
     else
