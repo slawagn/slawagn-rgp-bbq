@@ -6,8 +6,8 @@ class EventPolicy < ApplicationPolicy
     @record  = record
   end
 
-  delegate :user,    to: :context
-  delegate :pincode, to: :context
+  delegate :user,    to: :context, allow_nil: true
+  delegate :pincode, to: :context, allow_nil: true
 
   def show?
     if @record.pincode.blank?
