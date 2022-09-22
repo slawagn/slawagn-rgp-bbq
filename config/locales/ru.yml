@@ -80,6 +80,9 @@ ru:
       update: 'Сохранить'
       delete: 'Удалить'
 
+  pundit:
+    not_authorized: 'У вас нет прав для выполнения этого действия!'
+
   events:
     edit:
       edit_event: 'Редактирование события'
