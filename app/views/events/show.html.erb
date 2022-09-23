@@ -48,7 +48,7 @@
     <div class="col-md-8">
       <div class="event-photos">
         <div class="event-photos-gallery">
-          <%= render partial: 'photos/photo', collection: @event.photos.except(@new_photo) %>
+          <%= render partial: 'photos/photo', collection: policy_scope(@event.photos) %>
         </div>
 
         <div class="event-photo-form">
@@ -64,7 +64,7 @@
 
         <div class="buffer-both">
           <%= render partial: 'comments/comment',
-            collection: @event.comments.except(@new_comment)
+            collection: policy_scope(@event.comments)
           %>
         </div>
       </div>
@@ -80,7 +80,7 @@
         <h4><%= t('.event_guests') %></h4>
         <div class='d-flex flex-column'>
           <%= render partial: 'subscriptions/subscription',
-            collection: @event.subscriptions.except(@new_subscription) %>
+            collection: policy_scope(@event.subscriptions) %>
         </div>
       </div>
 
