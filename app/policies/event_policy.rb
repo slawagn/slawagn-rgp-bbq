@@ -9,6 +9,14 @@ class EventPolicy < ApplicationPolicy
   delegate :user,    to: :context, allow_nil: true
   delegate :pincode, to: :context, allow_nil: true
 
+  def index?
+    true
+  end
+
+  def new?
+    create?
+  end
+
   def show?
     if @record.pincode.blank?
       true
@@ -23,6 +31,10 @@ class EventPolicy < ApplicationPolicy
 
   def edit?
     event_owned_by_user?
+  end
+
+  def create?
+    user.present?  
   end
 
   def update?

@@ -1,9 +1,10 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!, except: %i[show index]
   before_action :set_event, only: %i[show edit update destroy]
-  after_action  :verify_authorized, only: %i[show edit update destroy]
+  after_action  :verify_authorized
 
   def index
+    authorize Event
     @events = Event.all
   end
 
@@ -11,12 +12,12 @@ class EventsController < ApplicationController
     if params[:pincode].present?
       cookies.permanent["event_#{@event.id}_pincode"] = params[:pincode]
     end
-    
+
     unless policy(@event).show?
       skip_authorization
       render 'password_form' and return
     end
-    
+
     authorize @event
 
     @new_comment = @event.comments.build(params[:comment])
@@ -25,6 +26,7 @@ class EventsController < ApplicationController
   end
 
   def new
+    authorize Event
     @event = current_user.events.build
   end
 
@@ -33,6 +35,8 @@ class EventsController < ApplicationController
   end
 
   def create
+    authorize Event
+
     @event = current_user.events.build(event_params)
 
     if @event.save
@@ -60,7 +64,7 @@ class EventsController < ApplicationController
   end
 
   def pundit_user
-    EventPolicy::UserWithPincode.new(current_user, cookies.permanent["event_#{@event.id}_pincode"])
+    EventPolicy::UserWithPincode.new(current_user, cookies.permanent["event_#{@event&.id}_pincode"])
   end
 
   private
