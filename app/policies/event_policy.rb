@@ -1,11 +1,6 @@
 class EventPolicy < ApplicationPolicy
   attr_reader :context, :user, :pincode
   
-  def initialize(context, record)
-    @context = context
-    @record  = record
-  end
-
   delegate :user,    to: :context, allow_nil: true
   delegate :pincode, to: :context, allow_nil: true
 

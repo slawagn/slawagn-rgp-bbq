@@ -13,8 +13,4 @@ class CommentPolicy < ApplicationPolicy
 
     attr_reader :user, :scope
   end
-
-  def destroy?
-    @user.present? && (@record.user == @user || @record.event.user == @user )
-  end
 end

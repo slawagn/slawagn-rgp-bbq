@@ -3,9 +3,9 @@
 class ApplicationPolicy
   attr_reader :user, :record
 
-  def initialize(user, record)
-    @user = user
-    @record = record
+  def initialize(context, record)
+    @context = context
+    @record  = record
   end
 
   def index?
@@ -33,7 +33,9 @@ class ApplicationPolicy
   end
 
   def destroy?
-    false
+    return false unless @context.user.present?
+    
+    [@record.user, @record.event.user].include?(@context.user)
   end
 
   class Scope
