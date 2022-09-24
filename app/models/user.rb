@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
   def link_subscriptions
     Subscription
       .where(user_id: nil, user_email: self.email)
-      .update_all(user: self)
+      .update_all(user_id: self.id)
   end
 
   def set_name
