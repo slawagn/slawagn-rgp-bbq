@@ -17,7 +17,7 @@
       <%= link_to fa_icon('trash'),
         event_comment_path(comment.event, comment),
         method: :delete,
-        data:   { confirm: t('views.comments.comment.destroy_confirm') }
+        data:   { confirm: t('.destroy_confirm') }
       %>
     <% end %>
   </p>

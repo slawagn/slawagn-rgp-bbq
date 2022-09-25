@@ -83,6 +83,9 @@ ru:
   pundit:
     not_authorized: 'У вас нет прав для выполнения этого действия!'
 
+  comments:
+    comment:
+      destroy_confirm: 'Вы уверены, что хотите удалить комментарий?'
   events:
     edit:
       edit_event: 'Редактирование события'
@@ -107,6 +110,9 @@ ru:
       sign_in:  'Войти'
       sign_out: 'Выйти'
       sign_up:  'Регистрация'
+  photos:
+    photo:
+      destroy_confirm: 'Вы уверены, что хотите удалить фото?'
   subscriptions:
     form:
       subscribe: 'Подписаться'
