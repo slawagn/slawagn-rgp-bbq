@@ -15,4 +15,17 @@ class EventMailer < ApplicationMailer
     mail to: email,
       subject: I18n.t('event_mailer.comment.new_comment') + event.title
   end
+
+  def photo(photo, author)
+    @photo  = photo
+    @author = author
+
+    recipients = [photo.event.user] + photo.event.subscribers
+    recipients.reject! { |user| user == author }
+
+    emails = recipients.map(&:email)
+
+    mail to: emails,
+      subject: I18n.t('event_mailer.photo.new_photo') + @photo.event.title
+  end
 end

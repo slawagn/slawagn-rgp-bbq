@@ -144,6 +144,10 @@ ru:
       new_comment: 'Новый коментарий под событием '
       owner:       'Организатор'
       title:       'Новый комментарий'
+    photo:
+      author: 'Автор'
+      event:  'Событие'
+      title:  'Новое фото'
 
   error:
     one:  '%{count} ошибка'
