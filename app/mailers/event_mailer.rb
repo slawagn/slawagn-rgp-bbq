@@ -26,6 +26,6 @@ class EventMailer < ApplicationMailer
     emails = recipients.map(&:email)
 
     mail to: emails,
-      subject: I18n.t('event_mailer.photo.new_photo') + @photo.event.title
+      subject: I18n.t('event_mailer.photo.title') + @photo.event.title
   end
 end
