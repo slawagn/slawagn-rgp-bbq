@@ -33,6 +33,12 @@ group :development, :test do
 end
 
 group :development do
+  gem 'capistrano', '~> 3.17'
+  gem 'capistrano-rails', '~> 1.6'
+  gem 'capistrano-passenger', '~> 0.2.1'
+  gem 'capistrano-rbenv', '~> 2.2'
+  gem 'capistrano-bundler', '~> 2.1'
+
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'spring'
   gem 'web-console', '>= 4.1.0'
@@ -47,4 +53,5 @@ end
 group :production do
   gem "pg", "~> 1.4"
 end
+
 
