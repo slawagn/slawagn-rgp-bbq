@@ -12,7 +12,6 @@ gem "fog-aws", "~> 3.14"
 gem "font-awesome-rails", "~> 4.7"
 gem 'jbuilder', '~> 2.7'
 gem 'listen', '~> 3.3'
-gem "mailjet", "~> 1.7"
 gem "net-imap", "~> 0.2.3", require: false
 gem "net-pop", "~> 0.1.1", require: false
 gem "net-smtp", "~> 0.3.1", require: false
@@ -53,5 +52,4 @@ end
 group :production do
   gem "pg", "~> 1.4"
 end
-
 
