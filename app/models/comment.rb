@@ -2,6 +2,8 @@ class Comment < ApplicationRecord
   belongs_to :user, optional: true
   belongs_to :event
 
+  scope :persisted, -> { where.not(id: nil) }
+
   validates :body, presence: true
   validates :user_name, presence: true, unless: -> { user.present? }
 

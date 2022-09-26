@@ -6,7 +6,7 @@ class SubscriptionPolicy < ApplicationPolicy
     end
 
     def resolve
-      scope.reject { |subscription| subscription.new_record? }
+      scope.persisted
     end
 
     private

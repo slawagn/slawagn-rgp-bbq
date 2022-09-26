@@ -6,7 +6,7 @@ class CommentPolicy < ApplicationPolicy
     end
 
     def resolve
-      scope.reject { |comment| comment.new_record? }
+      scope.persisted
     end
 
     private

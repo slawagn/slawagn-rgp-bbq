@@ -6,7 +6,7 @@ class PhotoPolicy < ApplicationPolicy
     end
 
     def resolve
-      scope.reject { |photo| photo.new_record? }
+      scope.persisted
     end
 
     private

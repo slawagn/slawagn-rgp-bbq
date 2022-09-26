@@ -2,6 +2,8 @@ class Photo < ApplicationRecord
   belongs_to :event
   belongs_to :user
 
+  scope :persisted, -> { where.not(id: nil) }
+
   validates :event, presence: true
   validates :user,  presence: true
 
