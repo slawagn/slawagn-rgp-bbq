@@ -52,4 +52,13 @@ class ApplicationPolicy
 
     attr_reader :user, :scope
   end
+
+  class UserWithPincode
+    attr_reader :user, :pincode
+
+    def initialize(user, pincode)
+      @user     = user
+      @pincode  = pincode
+    end
+  end
 end

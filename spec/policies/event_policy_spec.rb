@@ -10,19 +10,19 @@ RSpec.describe EventPolicy do
 
     context 'if user is not logged in' do
       it 'denies access' do
-        is_expected.not_to permit(EventPolicy::UserWithPincode.new(nil, nil), Event.new)
+        is_expected.not_to permit(ApplicationPolicy::UserWithPincode.new(nil, nil), Event.new)
       end
     end
 
     context 'if user does not own the event' do
       it 'denies access' do
-        is_expected.not_to permit(EventPolicy::UserWithPincode.new(other_user, nil), event)
+        is_expected.not_to permit(ApplicationPolicy::UserWithPincode.new(other_user, nil), event)
       end
     end
 
     context 'if user owns the event' do
       it 'grants access' do
-        is_expected.to permit(EventPolicy::UserWithPincode.new(event_owner, nil), event)
+        is_expected.to permit(ApplicationPolicy::UserWithPincode.new(event_owner, nil), event)
       end
     end
   end
@@ -44,20 +44,20 @@ RSpec.describe EventPolicy do
       context 'and is accessed by other user' do
         context 'and the correct pincode is provided' do
           it 'grants access' do
-            is_expected.to permit(EventPolicy::UserWithPincode.new(other_user, '1234'), private_event)
+            is_expected.to permit(ApplicationPolicy::UserWithPincode.new(other_user, '1234'), private_event)
           end
         end
 
         context 'and the incorrect pincode is provided' do
           it 'denies access' do
-            is_expected.not_to permit(EventPolicy::UserWithPincode.new(other_user, '4321'), private_event)
+            is_expected.not_to permit(ApplicationPolicy::UserWithPincode.new(other_user, '4321'), private_event)
           end
         end
       end
 
       context 'and is accessed by the owner' do
         it 'grants access' do
-          is_expected.to permit(EventPolicy::UserWithPincode.new(event_owner, nil), private_event)
+          is_expected.to permit(ApplicationPolicy::UserWithPincode.new(event_owner, nil), private_event)
         end
       end
     end

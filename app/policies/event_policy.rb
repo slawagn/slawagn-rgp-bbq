@@ -45,13 +45,4 @@ class EventPolicy < ApplicationPolicy
   def event_owned_by_user?
     user.present? && (@record.user == user)
   end
-
-  class UserWithPincode
-    attr_reader :user, :pincode
-
-    def initialize(user, pincode)
-      @user     = user
-      @pincode  = pincode
-    end
-  end
 end

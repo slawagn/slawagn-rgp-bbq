@@ -63,10 +63,6 @@ class EventsController < ApplicationController
     redirect_to events_url, notice: I18n.t('controllers.events.destroyed')
   end
 
-  def pundit_user
-    EventPolicy::UserWithPincode.new(current_user, cookies.permanent["event_#{@event&.id}_pincode"])
-  end
-
   private
 
   def set_event

@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
   def pundit_user
-    EventPolicy::UserWithPincode.new(current_user, cookies.permanent["event_#{@event&.id}_pincode"])
+    ApplicationPolicy::UserWithPincode.new(current_user, cookies.permanent["event_#{@event&.id}_pincode"])
   end
 
   before_action :configure_permitted_parameters, if: :devise_controller?
