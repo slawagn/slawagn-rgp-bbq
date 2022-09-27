@@ -42,6 +42,6 @@ class CommentsController < ApplicationController
     end
 
     def notify_subscribers(comment)
-      EventMailer.comment(comment).deliver_now
+      EventMailer.comment(comment).deliver_later
     end
 end
