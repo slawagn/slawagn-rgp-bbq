@@ -1,24 +1,30 @@
 class EventMailer < ApplicationMailer
-  def subscription(event, subscription)
+  def subscription(subscription)
     @email = subscription.user_email
     @name  = subscription.user_name
-    @event = event
+    @event = subscription.event
 
-    mail to: event.user.email,
-      subject: I18n.t('event_mailer.subscription.new_subscription') + event.title
+    mail to: @event.user.email,
+      subject: I18n.t('event_mailer.subscription.new_subscription', title: @event.title)
   end
 
-  def comment(event, comment, email)
+  def comment(comment)
     @comment = comment
-    @event   = event
+    @event = comment.event
 
-    mail to: email,
-      subject: I18n.t('event_mailer.comment.new_comment') + event.title
+    emails =
+    (
+      event.subscriptions.map(&:user_email) +
+      [event.user.email] -
+      [comment.user&.email]
+    ).uniq
+
+    mail to: emails,
+      subject: I18n.t('event_mailer.comment.new_comment', title: @event.title)
   end
 
   def photo(photo, author)
     @photo  = photo
-    @author = author
 
     recipients = [photo.event.user] + photo.event.subscribers
     recipients.reject! { |user| user == author }
@@ -26,6 +32,6 @@ class EventMailer < ApplicationMailer
     emails = recipients.map(&:email)
 
     mail to: emails,
-      subject: "#{I18n.t('event_mailer.photo.title')}: #{@photo.event.title}"
+      subject: I18n.t('event_mailer.photo.title', title: @photo.event.title)
   end
 end
