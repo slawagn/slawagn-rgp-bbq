@@ -62,4 +62,7 @@
 
 server 'rgp.slawagn.xyz',
   user:  'deploy',
-  roles: %w[app db web]
+  roles: %w[app db web resque_worker]
+
+set :resque_environment_task, true
+set :workers, { "rgp-bbq*" => 1 }

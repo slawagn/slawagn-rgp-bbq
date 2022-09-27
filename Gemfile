@@ -19,6 +19,7 @@ gem 'puma', '~> 5.0'
 gem "pundit", "~> 2.2"
 gem 'rails', '~> 6.1.6', '>= 6.1.6.1'
 gem "rails-i18n", "~> 7.0"
+gem "resque", "~> 2.4"
 gem "rmagick", "~> 4.2"
 gem "rspec-rails", "~> 5.1"
 gem 'sass-rails', '>= 6'
@@ -37,6 +38,7 @@ group :development do
   gem 'capistrano-passenger', '~> 0.2.1'
   gem 'capistrano-rbenv', '~> 2.2'
   gem 'capistrano-bundler', '~> 2.1'
+  gem "capistrano-resque", "~> 0.2.3", require: false
 
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'spring'
@@ -52,4 +54,3 @@ end
 group :production do
   gem "pg", "~> 1.4"
 end
-
