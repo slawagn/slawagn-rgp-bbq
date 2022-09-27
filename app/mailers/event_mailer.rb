@@ -14,8 +14,8 @@ class EventMailer < ApplicationMailer
 
     emails =
     (
-      event.subscriptions.map(&:user_email) +
-      [event.user.email] -
+      @event.subscriptions.map(&:user_email) +
+      [@event.user.email] -
       [comment.user&.email]
     ).uniq
 
