@@ -8,30 +8,18 @@ class EventMailer < ApplicationMailer
       subject: I18n.t('event_mailer.subscription.new_subscription', title: @event.title)
   end
 
-  def comment(comment)
+  def comment(comment, email)
     @comment = comment
     @event = comment.event
 
-    emails =
-    (
-      @event.subscriptions.map(&:user_email) +
-      [@event.user.email] -
-      [comment.user&.email]
-    ).uniq
-
-    mail to: emails,
+    mail to: email,
       subject: I18n.t('event_mailer.comment.new_comment', title: @event.title)
   end
 
-  def photo(photo, author)
+  def photo(photo, email)
     @photo  = photo
 
-    recipients = [photo.event.user] + photo.event.subscribers
-    recipients.reject! { |user| user == author }
-
-    emails = recipients.map(&:email)
-
-    mail to: emails,
+    mail to: email,
       subject: I18n.t('event_mailer.photo.title', title: @photo.event.title)
   end
 end
