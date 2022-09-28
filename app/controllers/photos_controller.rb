@@ -7,7 +7,7 @@ class PhotosController < ApplicationController
     @new_photo.user = current_user
 
     if @new_photo.save
-      notify_subscribers(@new_photo)
+      NotifyAboutNewPhotoJob.perform_later(@new_photo)
       redirect_to @event, notice: I18n.t('controllers.photos.created')
     else
       render 'events/show', alert: I18n.t('controllers.photos.error')
@@ -38,16 +38,5 @@ class PhotosController < ApplicationController
 
   def photo_params
     params.fetch(:photo, {}).permit(:photo)
-  end
-
-  def notify_subscribers(photo)
-    recipients = [photo.event.user] + photo.event.subscribers
-    recipients.reject! { |user| user == photo.user }
-
-    emails = recipients.map(&:email)
-
-    emails.each do |email|
-      EventMailer.photo(photo, email).deliver_later
-    end
   end
 end
