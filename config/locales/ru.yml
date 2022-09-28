@@ -134,20 +134,21 @@ ru:
       email:    'Email'
       event:    'Событие'
       name:     'Имя'
-      new_subscription: 'Новая подписка на событие %{title}'
+      subject:  'Новая подписка на событие %{title}'
       owner:    'Организатор'
       title:    'Новая подписка'
     comment:
       author:      'Автор'
       datetime:    'Состоится'
       event:       'Событие'
-      new_comment: 'Новый коментарий под событием %{title}'
       owner:       'Организатор'
+      subject:     'Новый комментарий под событием %{title}'
       title:       'Новый комментарий'
     photo:
-      author: 'Автор'
-      event:  'Событие'
-      title:  'Новое фото: %{title}'
+      author:  'Автор'
+      event:   'Событие'
+      subject: 'Новое фото под событием %{title}'
+      title:   'Новое фото'
 
   error:
     one:  '%{count} ошибка'
