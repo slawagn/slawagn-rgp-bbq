@@ -15,6 +15,9 @@ gem 'listen', '~> 3.3'
 gem "net-imap", "~> 0.2.3", require: false
 gem "net-pop", "~> 0.1.1", require: false
 gem "net-smtp", "~> 0.3.1", require: false
+gem "omniauth", "~> 2.1"
+gem "omniauth-github", "~> 2.0"
+gem "omniauth-rails_csrf_protection", "~> 1.0"
 gem 'puma', '~> 5.0'
 gem "pundit", "~> 2.2"
 gem 'rails', '~> 6.1.6', '>= 6.1.6.1'
@@ -47,6 +50,7 @@ end
 
 group :test do
   gem 'capybara', '>= 3.26'
+  gem "factory_bot_rails", "~> 6.2"
   gem 'selenium-webdriver', '>= 4.0.0.rc1'
   gem 'webdrivers'
 end

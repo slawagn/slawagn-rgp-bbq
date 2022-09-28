@@ -88,4 +88,5 @@ Rails.application.configure do
   }
 
   config.active_job.queue_adapter = :async
+  config.hosts << "lvh.me"
 end
