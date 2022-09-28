@@ -30,3 +30,6 @@ function init(){
     }
   );
 }
+document.addEventListener("turbolinks:render", function() {
+    init();
+})
