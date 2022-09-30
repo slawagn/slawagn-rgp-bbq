@@ -2,18 +2,23 @@ ymaps.ready(init);
 var myMap;
 
 function init(){
-  address = document.getElementById('map').getAttribute('data-address');
+  const mapInDom = document.getElementById('map');
+  if (!mapInDom) {
+    return;
+  }
 
-  myMap = new ymaps.Map("map", {
+  const address = mapInDom.getAttribute('data-address');
+
+  const myMap = new ymaps.Map("map", {
     center: [55.76, 37.64],
     zoom: 10
   });
 
-  myGeocoder = ymaps.geocode(address);
+  const myGeocoder = ymaps.geocode(address);
 
   myGeocoder.then(
     function (res) {
-      coordinates = res.geoObjects.get(0).geometry.getCoordinates();
+      const coordinates = res.geoObjects.get(0).geometry.getCoordinates();
 
       myMap.geoObjects.add(
         new ymaps.Placemark(
@@ -31,5 +36,5 @@ function init(){
   );
 }
 document.addEventListener("turbolinks:render", function() {
-    init();
+  init();
 })
